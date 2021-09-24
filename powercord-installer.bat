@@ -22,8 +22,8 @@ cd powercord
 CALL npm i
 CALL npm run plug
 CALL taskkill /IM "DiscordCanary.exe" /F
-if exist "C:\Users\%USERNAME%\AppData\Local\DiscordCanary\" (
-    cd C:\Users\%USERNAME%\AppData\Local\DiscordCanary\
+if exist "%LocalAppData%\DiscordCanary\" (
+    cd %LocalAppData%\DiscordCanary\
 ) else (
     goto discordcanary_not_found
 )
@@ -37,8 +37,8 @@ CALL npm run unplug
 cd ..
 @RD /S /Q "powercord"
 CALL taskkill /IM "DiscordCanary.exe" /F
-if exist "C:\Users\%USERNAME%\AppData\Local\DiscordCanary\" (
-    cd C:\Users\%USERNAME%\AppData\Local\DiscordCanary\
+if exist "%LocalAppData%\DiscordCanary\" (
+    cd %LocalAppData%\DiscordCanary\
 ) else (
     goto discordcanary_not_found
 )
@@ -51,8 +51,8 @@ goto start
 cd powercord
 CALL npm run plug
 CALL taskkill /IM "DiscordCanary.exe" /F
-if exist "C:\Users\%USERNAME%\AppData\Local\DiscordCanary\" (
-    cd C:\Users\%USERNAME%\AppData\Local\DiscordCanary\
+if exist "%LocalAppData%\DiscordCanary\" (
+    cd %LocalAppData%\DiscordCanary\
 ) else (
     goto discordcanary_not_found
 )
@@ -64,8 +64,8 @@ goto start
 cd powercord
 CALL npm run unplug
 CALL taskkill /IM "DiscordCanary.exe" /F
-if exist "C:\Users\%USERNAME%\AppData\Local\DiscordCanary\" (
-    cd C:\Users\%USERNAME%\AppData\Local\DiscordCanary\
+if exist "%LocalAppData%\DiscordCanary\" (
+    cd %LocalAppData%\DiscordCanary\
 ) else (
     goto discordcanary_not_found
 )
@@ -103,13 +103,10 @@ if not exist "powercord" (
 	echo Installing Panikk
 	CALL git clone https://github.com/LandenStephenss/Panikk.git
 	echo Panikk has been installed.
-	echo Installing powercord-together
-	CALL git clone https://github.com/notsapinho/powercord-together.git
-	echo powercord-together has been installed.
 	echo Done
 	CALL taskkill /IM "DiscordCanary.exe" /F
-	if exist "C:\Users\%USERNAME%\AppData\Local\DiscordCanary\" (
-		cd C:\Users\%USERNAME%\AppData\Local\DiscordCanary\
+	if exist "%LocalAppData%\DiscordCanary\" (
+		cd %LocalAppData%\DiscordCanary\
 		start Update.exe --processStart DiscordCanary.exe
 	) else (
 		goto discordcanary_not_found
