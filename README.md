@@ -30,6 +30,11 @@ All bugs can be reported in the "Issues" tab.
 ## Special thanks
 
 [LandenStephenss](https://github.com/LandenStephenss/) for [PowercordPluginDownloader](https://github.com/LandenStephenss/PowercordPluginDownloader) and [Panikk](https://github.com/LandenStephenss/Panikk)
+
 [ploogins](https://github.com/ploogins/) for [PowercordThemeDownloader](https://github.com/ploogins/PowercordThemeDownloader)
+
 [Juby210](https://github.com/Juby210/) and [intrnl](https://github.com/intrnl/) for [bdCompat](https://github.com/Juby210/bdCompat)
+
 [Powercord Team](https://github.com/powercord-org) for [Powercord](https://github.com/powercord-org/powercord)
+
+[Discord](https://discord.com) for [Discord](https://discord.com)
