@@ -35,6 +35,8 @@ All bugs can be reported in the "Issues" tab.
 
 [Juby210](https://github.com/Juby210/) and [intrnl](https://github.com/intrnl/) for [bdCompat](https://github.com/Juby210/bdCompat)
 
+[notsapinho](https://github.com/notsapinho) for [powercord-together](https://github.com/notsapinho/powercord-together)
+
 [Powercord Team](https://github.com/powercord-org) for [Powercord](https://github.com/powercord-org/powercord)
 
 [Discord](https://discord.com) for [Discord](https://discord.com)
