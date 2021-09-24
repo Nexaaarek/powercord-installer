@@ -8,12 +8,14 @@ echo 2) Uninstall Powercord
 echo 3) Inject Powercord
 echo 4) Unplug Powercord
 echo 5) Install useful plugins
+echo 6) Update Powercord
 set /p option=option: 
 if %option% == 1 goto install
 if %option% == 2 goto uninstall
 if %option% == 3 goto inject
 if %option% == 4 goto unplug
 if %option% == 5 goto install_useful_plugins
+if %option% == 6 goto update_powercord
 goto error
 :install
 echo Installing Powercord
@@ -118,4 +120,12 @@ if not exist "powercord" (
 :powercord_error
 echo Powercord not detected
 pause >nul
+goto start
+:update_powercord
+echo Updating Powercord...
+cd powercord
+CALL git pull
+echo Powercord has been updated.
+pause >nul
+cd ..
 goto start
