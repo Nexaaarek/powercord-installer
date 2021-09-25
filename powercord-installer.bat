@@ -103,6 +103,9 @@ if not exist "powercord" (
 	echo Installing Panikk
 	CALL git clone https://github.com/LandenStephenss/Panikk.git
 	echo Panikk has been installed.
+	echo Installing powercord-together
+	CALL git clone https://github.com/notsapinho/powercord-together.git
+	echo powercord-together has been installed.
 	echo Done
 	CALL taskkill /IM "DiscordCanary.exe" /F
 	if exist "%LocalAppData%\DiscordCanary\" (
