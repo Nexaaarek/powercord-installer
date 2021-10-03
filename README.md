@@ -20,7 +20,7 @@ powercord-installer.bat <option>
 
 After starting the program, follow the instructions displayed in the terminal
 
-<something> is optional
+\<something\> is optional
 
 ## Information
 
