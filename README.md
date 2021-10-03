@@ -15,10 +15,12 @@ You must download [Git for Windows](https://gitforwindows.org) and [Discord Cana
 ## Usage
 
 ```
-powercord-installer.bat
+powercord-installer.bat <option>
 ```
 
 After starting the program, follow the instructions displayed in the terminal
+
+<something> is optional
 
 ## Information
 
