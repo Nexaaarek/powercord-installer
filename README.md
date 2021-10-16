@@ -39,6 +39,8 @@ All bugs can be reported in the "Issues" tab.
 
 [notsapinho](https://github.com/notsapinho) for [powercord-together](https://github.com/notsapinho/powercord-together)
 
+[redstonekasi](https://github.com/redstonekasi) for [theme-toggler](https://github.com/redstonekasi/theme-toggler)
+
 [Powercord Team](https://github.com/powercord-org) for [Powercord](https://github.com/powercord-org/powercord)
 
 [Discord](https://discord.com) for [Discord](https://discord.com)
