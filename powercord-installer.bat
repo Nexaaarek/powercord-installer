@@ -9,7 +9,7 @@ echo 3) Inject Powercord
 echo 4) Unplug Powercord
 echo 5) Install useful plugins
 echo 6) Update Powercord
-if %1 == goto choose_option
+if %1 == "" goto choose_option
 if %1 == 1 goto install
 if %1 == 2 goto uninstall
 if %1 == 3 goto inject
@@ -114,6 +114,14 @@ set plugin=powercord-together
 if not exist "%plugin%" (
 	echo Installing %plugin%
 	CALL git clone https://github.com/notsapinho/powercord-together.git
+	echo %plugin% has been installed.
+) else (
+	echo %plugin% already installed. Skipping...
+)
+set plugin=theme-toggler
+if not exist "%plugin%" (
+	echo Installing %plugin%
+	CALL git clone https://github.com/redstonekasi/theme-toggler.git
 	echo %plugin% has been installed.
 ) else (
 	echo %plugin% already installed. Skipping...
