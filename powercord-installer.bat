@@ -1,23 +1,28 @@
 @echo off
 title powercord-installer
+:check_requirments
+set currentdir=%cd%
+npm --help > NUL 2> NUL 
+if errorlevel 1(
+	echo Downloading nodejs...
+	CALL bitsadmin /transfer mydownloadjob /download /priority FOREGROUND "https://nodejs.org/dist/v16.13.0/node-v16.13.0-x64.msi" "%USERPROFILE%\Downloads\node-v16.13.0-x64.msi"
+	echo Downloaded nodejs
+	echo Installing...
+	CALL %USERPROFILE%\Downloads\node-v16.13.0-x64.msi /i c:\setup.msi /QN /L*V "C:\Temp\msilog.log"
+	echo Installed
+)
+git --help > NUL 2> NUL 
+if errorlevel 1( 
+	echo Downloading Git...
+	CALL bitsadmin /transfer mydownloadjob /download /priority FOREGROUND "https://github.com/git-for-windows/git/releases/download/v2.33.1.windows.1/Git-2.33.1-64-bit.exe" "%USERPROFILE%\Downloads\Git-2.33.1-64-bit.exe"
+	echo Downloaded Git
+	echo Installing...
+	CALL %USERPROFILE%\Downloads\Git-2.33.1-64-bit.exe
+	echo Installed
+)
+cd %cd%
 :start
 cls
-echo Choose option:
-echo 1) Install Powercord
-echo 2) Uninstall Powercord
-echo 3) Inject Powercord
-echo 4) Unplug Powercord
-echo 5) Install useful plugins
-echo 6) Update Powercord
-if %1 == "" goto choose_option
-if %1 == 1 goto install
-if %1 == 2 goto uninstall
-if %1 == 3 goto inject
-if %1 == 4 goto unplug
-if %1 == 5 goto install_useful_plugins
-if %1 == 6 goto update_powercord
-goto error
-:choose_option
 set /p option=option: 
 if %option% == 1 goto install
 if %option% == 2 goto uninstall
