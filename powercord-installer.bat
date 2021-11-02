@@ -20,9 +20,10 @@ if errorlevel 1(
 	CALL %USERPROFILE%\Downloads\Git-2.33.1-64-bit.exe
 	echo Installed
 )
-cd %cd%
+if not exist "%LocalAppData%\DiscordCanary\" goto discordcanary_not_found
 :start
 cls
+cd %currentdir%
 set /p option=option: 
 if %option% == 1 goto install
 if %option% == 2 goto uninstall
@@ -32,7 +33,6 @@ if %option% == 5 goto install_useful_plugins
 if %option% == 6 goto update_powercord
 goto error
 :install
-if not exist "%LocalAppData%\DiscordCanary\" goto discordcanary_not_found
 if exist "powercord\" goto powercord_already_installed
 echo Installing Powercord
 git clone https://github.com/powercord-org/powercord
@@ -45,7 +45,6 @@ start Update.exe --processStart DiscordCanary.exe
 pause >nul
 exit
 :uninstall
-if not exist "%LocalAppData%\DiscordCanary\" goto discordcanary_not_found
 if not exist "powercord\" goto powercord_error
 echo Uninstalling Powercord...
 cd powercord
@@ -59,7 +58,6 @@ echo Uninstalled
 pause >nul
 exit
 :inject
-if not exist "%LocalAppData%\DiscordCanary\" goto discordcanary_not_found
 if not exist "powercord\" goto powercord_error
 cd powercord
 CALL npm run plug
@@ -69,7 +67,6 @@ start Update.exe --processStart DiscordCanary.exe
 pause >nul
 exit
 :unplug
-if not exist "%LocalAppData%\DiscordCanary\" goto discordcanary_not_found
 if not exist "powercord\" goto powercord_error
 cd powercord
 CALL npm run unplug
@@ -79,7 +76,6 @@ start Update.exe --processStart DiscordCanary.exe
 pause >nul
 exit
 :install_useful_plugins
-if not exist "%LocalAppData%\DiscordCanary\" goto discordcanary_not_found
 if not exist "powercord\" goto powercord_error
 echo Installing useful plugins...
 cd powercord/src/Powercord/plugins
@@ -138,8 +134,7 @@ start Update.exe --processStart DiscordCanary.exe
 pause >nul
 exit
 :update_powercord
-if not exist "%LocalAppData%\DiscordCanary\" goto discordcanary_not_found
-if exist "powercord\" goto powercord_already_installed
+if not exist "powercord\" goto powercord_error
 echo Updating Powercord
 cd powercord
 CALL git pull
